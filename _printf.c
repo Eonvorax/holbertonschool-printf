@@ -32,18 +32,18 @@ int _printf(const char * format, ...)
 		{
 			while (conv[i_conv].type != NULL)
 			{
-				if (format[i_f] == *conv[i_conv].type)
+				if (format[i_f + 1] == *conv[i_conv].type)
 				{
 					conv[i_conv].function(list);
 					count++;
+					i_f++;
 				}
 				i_conv++;
 			}
-			if (conv[i_conv].type == NULL)
-			{
-				_putchar(format[i_f]);
-				count++;
-			}
+		}
+		else
+		{
+			_putchar(format[i_f]);
 		}
 		i_f++;
 		i_conv = 0;
