@@ -6,7 +6,7 @@
  */
 void print_string(va_list list)
 {
-	char *str = va_args(list, char*);
+	char *str = va_arg(list, char*);
 
 	if (str == NULL)
 	{
@@ -20,7 +20,7 @@ void print_string(va_list list)
  */
 void print_char(va_list list)
 {
-	char c = va_args(list, char);
+	char c = va_arg(list, int);
 
 	_putchar(c);
 }
