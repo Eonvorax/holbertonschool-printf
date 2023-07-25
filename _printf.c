@@ -1,4 +1,25 @@
 #include "main.h"
+int get_function(char spec, va_list list)
+{
+	unsigned int i_conv = 0;
+	int count = 0;
+	format_t conv[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{NULL, NULL}
+	};
+	while (conv[i_conv].type != NULL)
+	{
+		if (spec == *conv[i_conv].type)
+		{
+			count += conv[i_conv].function(list);
+			return (count);
+		}
+		i_conv++;
+	}
+	return (-1);
+}
 /**
  * _printf - print the given format string with every other argument
  * @format: given format string
@@ -14,15 +35,8 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i_f = 0;
-	unsigned int i_conv = 0;
-	int count;
-
-	format_t conv[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{NULL, NULL}
-	};
+	int count = 0;
+	int length = 0;
 	va_list list;
 
 	va_start(list, format);
@@ -30,15 +44,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i_f] == '%' && format[i_f + 1] != '\0')
 		{
-			while (conv[i_conv].type != NULL)
+			length = get_function(format[i_f + 1], list);
+			if (length >= 0)
 			{
-				if (format[i_f + 1] == *conv[i_conv].type)
-				{
-					conv[i_conv].function(list);
-					count++;
-					i_f++;
-				}
-				i_conv++;
+				count += length;
+			}
+			else
+			{
+				_putchar(format[i_f]);
 			}
 		}
 		else
@@ -46,7 +59,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i_f]);
 		}
 		i_f++;
-		i_conv = 0;
 	}
 	va_end(list);
 	return (count);
