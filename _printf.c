@@ -20,6 +20,7 @@ int _printf(const char * format, ...)
 	format_t conv[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 	va_list list;
@@ -27,11 +28,7 @@ int _printf(const char * format, ...)
 	va_start(list, format);
 	while (format != NULL && format[i_f] != '\0')
 	{
-		if (format[i_f] == '%' && format[i_f + 1] == '%')
-		{
-			_putchar('%');
-		}
-		else if (format[i_f] == '%' && format[i_f + 1] != '\0')
+		if (format[i_f] == '%' && format[i_f + 1] != '\0')
 		{
 			while (conv[i_conv].type != NULL)
 			{
