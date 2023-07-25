@@ -22,6 +22,8 @@ void _puts(char *s);
 
 void print_char(va_list list);
 
-/*void print_all(const char * const string, ...)*/
+void print_string(va_list list);
+
+int _printf(const char *format, ...);
 
 #endif
