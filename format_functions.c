@@ -27,6 +27,7 @@ void print_char(va_list list)
 }
 /**
  * print_percent - prints a percent
+ * @list: given va_list list
  * Return: nothing
  */
 void print_percent(__attribute__((unused)) va_list list)
