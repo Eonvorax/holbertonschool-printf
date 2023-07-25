@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * get_function - matches given char specifier with a function pointer
+ * @spec: char specifier
+ * @list: va_list list of args
+ * Return: int length of printed output, -1 if match not found
+ */
 int get_function(char spec, va_list list)
 {
 	unsigned int i_conv = 0;
@@ -53,11 +59,13 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar(format[i_f]);
+				count++;
 			}
 		}
 		else
 		{
 			_putchar(format[i_f]);
+			count++;
 		}
 		i_f++;
 	}
