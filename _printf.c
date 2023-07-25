@@ -14,7 +14,7 @@ int _printf(const char * format, ...)
 {
 	unsigned int i_f = 0;
 	unsigned int i_conv = 0;
-	
+	int count;
 	/* Array of format_t structures, to convert each defined specifier
 	 to the right function pointer */
 	format_t conv[] = {
@@ -38,12 +38,19 @@ int _printf(const char * format, ...)
 				if (format[i_f] == *conv[i_conv].type)
 				{
 					conv[i_conv].function(list);
+					count++;
 				}
 				i_conv++;
+			}
+			if (conv[i_conv].type == NULL)
+			{
+				_putchar(format[i_f]);
+				count++;
 			}
 		}
 		i_f++;
 		i_conv = 0;
 	}
 	va_end(list);
+	return (count);
 }
