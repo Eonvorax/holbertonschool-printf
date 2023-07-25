@@ -48,6 +48,7 @@ int _printf(const char *format, ...)
 			if (length >= 0)
 			{
 				count += length;
+				i_f++;
 			}
 			else
 			{
