@@ -2,8 +2,14 @@
 #define MAIN_H
 #include <unistd.h>
 #include <stdarg.h>
-#include <stdlib.h>
 
+/**
+ * struct format - stucture linking a format specifier and the right function
+ * pointer to print it correctly
+ *
+ * @type: a type format specifier (a string of length 1)
+ * @function: a function pointer for this specifier
+ */
 typedef struct format
 {
 	char *type;
