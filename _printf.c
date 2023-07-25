@@ -41,12 +41,15 @@ int get_function(char spec, va_list list)
 int _printf(const char *format, ...)
 {
 	unsigned int i_f = 0;
-	int count = 0;
-	int length = 0;
+	int count = 0, length = 0;
 	va_list list;
 
 	va_start(list, format);
-	while (format != NULL && format[i_f] != '\0')
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	{
+		return (-1);
+	}
+	while (format[i_f] != '\0')
 	{
 		if (format[i_f] == '%' && format[i_f + 1] != '\0')
 		{
