@@ -3,6 +3,11 @@
  * get_function - matches given char specifier with a function pointer
  * @spec: char specifier
  * @list: va_list list of args
+ *
+ * Description: Goes through each element of the conv[] array, each element
+ * being a structure {type, function}. If a match is found, calls the right
+ * function for the type specifier at this index, then returns the number
+ * of printed characters.
  * Return: int length of printed output, -1 if match not found
  */
 int get_function(char spec, va_list list)
@@ -34,11 +39,10 @@ int get_function(char spec, va_list list)
  *
  * Description: Reads the given string, printing every non-specifier character.
  * When a '%' is found, tries to match the following character with a
- * predefined specifier in conv[] and if matched, uses the
- * corresponding pointer
- * to print the current argument. In case of '%%', prints '%'.
+ * predefined specifier in conv[] and if matched, uses the corresponding
+ * function pointer to print the current argument.
  * Stops on end character '\0'.
- * Return: 0 when successful, otherwise -1
+ * Return: int count, the total number of characters printed to stdout.
  */
 int _printf(const char *format, ...)
 {
