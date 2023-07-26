@@ -1,0 +1,60 @@
+.TH _PRINT 1 "26 July 2023" "1.0" "_printf manual"
+.SH NAME
+_printf - Produces output according to a format.
+
+.SH SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+@format: A character string containing zero or more directives.
+ 
+.SH RETURNS
+The number of characters printed (excluding the null byte used to end output to strings).
+
+On error, it returns -1.
+
+.SH DESCRIPTION
+This function mimics the behavior of the standard C library printf function and handles the following conversion specifiers: %c, %s, %%, %d, %i. It writes the output to stdout, the standard output stream. It does not handle the flag characters, field width, precision, and length modifiers. The buffer handling of the C library printf function is not reproduced.
+
+.SH PROTOTYPE
+int _printf(const char *format, ...);
+
+.SH RETURN VALUE
+The _printf function returns the number of characters printed (excluding the null character), or -1 if there is an error.
+
+.SH OPTIONS
+It supports the following data types:
+
+%c: Print a character.
+
+%s: Print a string.
+
+%%: Print the '%' character itself.
+
+%d: Print a signed integer in base 10.
+
+%i: Print an integer in base 10.
+
+The function returns the number of characters printed, excluding the null character used to terminate strings.
+
+.SH ARGUMENTS
+The _printf function accepts a variable number of arguments after the format parameter, which correspond to the conversion specifiers in the format string.
+
+.SH EXAMPLES
+_printf("Hello, %s!\n", "world");
+
+// Output: "Hello, world!"
+
+int num = 42;
+_printf("The answer is %d.\n", num);
+
+// Output: "The answer is 42."
+
+.SH AUTHORS
+Written by Pierre-Emmanuel Saint-Mézard and Yasine Benslika.
+
+.SH NOTES
+The function does not handle flag characters, field width, precision, or length modifiers.
+If the format string is NULL, or if it only consists of a single '%' character, the function returns -1.
+
