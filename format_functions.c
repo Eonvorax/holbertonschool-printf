@@ -1,7 +1,12 @@
 #include "main.h"
 /**
- * print_string - prints string arg from list
+ * print_string - prints string argument from list
  * @list: given va_list list
+ *
+ * Description: stores a string argument from a va_list, and checks if it
+ * is NULL. If NULL, the string is changed to "(null)". Then, the string is
+ * fully printed one character at a time using _putchar, and the number of
+ * printed characters is returned.
  * Return: int length of printed string
  */
 int print_string(va_list list)
