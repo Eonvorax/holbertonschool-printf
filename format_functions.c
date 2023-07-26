@@ -42,3 +42,40 @@ int print_percent(__attribute__((unused)) va_list list)
 	_putchar('%');
 	return (1);
 }
+/**
+ * print_int - prints an integer number
+ * @list: given va_list list
+ * Return: int length of printed number (counting sign + digits)
+ */
+int print_int(va_list list)
+{
+	long int number = va_arg(list, int);
+	long int result = number;
+	long int divisor = 1;
+	int count = 0;
+
+	if (number < 0)
+	{
+		_putchar('-');
+		count++;
+		result = labs(result);
+	}
+	if (number == 0)
+	{
+		_putchar('0');
+		count++;
+		return (count);
+	}
+	while ((divisor * 10) <= result)
+	{
+		divisor *= 10;
+	}
+	while (divisor > 0)
+	{
+		_putchar((labs(result / divisor)) + '0');
+		count++;
+		result %= divisor;
+		divisor /= 10;
+	}
+	return (count);
+}

@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * struct format - stucture linking a format specifier and the right function
@@ -25,6 +26,8 @@ int print_char(va_list list);
 int print_string(va_list list);
 
 int print_percent(va_list list);
+
+int print_int(va_list list);
 
 int get_function(char spec, va_list list);
 

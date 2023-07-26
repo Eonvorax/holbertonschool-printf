@@ -13,6 +13,8 @@ int get_function(char spec, va_list list)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
+		{"d", print_int},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 	while (conv[i_conv].type != NULL)
