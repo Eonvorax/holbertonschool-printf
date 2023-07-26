@@ -11,7 +11,7 @@ int print_string(va_list list)
 
 	if (string == NULL)
 	{
-		string = "(nil)";
+		string = "(null)";
 	}
 	while (string[length] != '\0')
 	{
