@@ -18,7 +18,7 @@ This function mimics the behavior of the standard C library printf function and 
 ## Requirements
 
 - Ubuntu 20.04 LTS or higher
-- gcc compiler (see [Compilation](###Compilation)).
+- gcc compiler (see "Usage" -> "Compilation").
 - git 2.25 or higher
 - see main.h file for dependencies
 
