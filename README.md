@@ -1,6 +1,5 @@
 # <p align="center">C - Printf</p>
-Project: a quick recreation of the basic functionalities of the printf
-function (from the stdio library).
+Project: a quick recreation of the basic functionalities of the printf function (from the stdio library).
 
 ## Description
 _printf - Produces output according to a format.
@@ -10,17 +9,19 @@ This function mimics the behavior of the standard C library printf function and 
 
 | File name |  Description|
 | :--------: | :--------: |
-| main.h  | header file with library inclusions and structure definition |
-| format_functions.c | contains functions to print each format specifier, using _putchar() |
-| _putchar.c  | a simple function to print a single character with write() |
-| _printf.c  | outputs to stdout depending on the given format string and arguments |
-| man_3_printf | man page file (see [Man page]) |
+| [main.h](https://github.com/Eonvorax/holbertonschool-printf/blob/697d4e756c5d0c57d96b9fde4d6bb419f1638701/main.h)  | header file with library inclusions and structure definition |
+| [format_functions.c](https://github.com/Eonvorax/holbertonschool-printf/blob/697d4e756c5d0c57d96b9fde4d6bb419f1638701/format_functions.c) | contains functions to print each format specifier, using _putchar() |
+| [_putchar.c](https://github.com/Eonvorax/holbertonschool-printf/blob/697d4e756c5d0c57d96b9fde4d6bb419f1638701/_putchar.c)  | a simple function to print a single character with write() |
+| [_printf.c](https://github.com/Eonvorax/holbertonschool-printf/blob/697d4e756c5d0c57d96b9fde4d6bb419f1638701/_printf.c)  | outputs to stdout depending on the given format string and arguments |
+| [man_3_printf](https://github.com/Eonvorax/holbertonschool-printf/blob/697d4e756c5d0c57d96b9fde4d6bb419f1638701/man_3_printf) | man page file (see [Man page]) |
 
 ## Requirements
 
 - Ubuntu 20.04 LTS or higher
 - gcc compiler (see [Compilation](###Compilation)).
 - git 2.25 or higher
+- see main.h file for dependencies
+
 ## Usage
 
 ### Compilation
@@ -82,4 +83,3 @@ Output:
 
 - Pierre-Emmanuel Saint-Mézard [@Github](https://github.com/Eonvorax)
 - Yasine Benslika [@Github](https://github.com/Yasine31130)
-
