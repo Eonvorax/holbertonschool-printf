@@ -19,8 +19,6 @@ typedef struct format
 
 int _putchar(char c);
 
-void _puts(char *s);
-
 int print_char(va_list list);
 
 int print_string(va_list list);
