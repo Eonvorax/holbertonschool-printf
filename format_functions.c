@@ -48,8 +48,13 @@ int print_percent(__attribute__((unused)) va_list list)
 	return (1);
 }
 /**
- * print_int - prints an integer number
+ * print_int - prints an integer number, one digit at a time
  * @list: given va_list list
+ *
+ * Description: prints each digit of the given integer by successively
+ * printing its leftmost digit (division by closest superior power of 10)
+ * and then removing that digit (modulo by the same power of 10) until there
+ * is no digit left.
  * Return: int length of printed number (counting sign + digits)
  */
 int print_int(va_list list)
