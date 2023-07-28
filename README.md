@@ -77,7 +77,8 @@ Output:
 > Len:[12]
 
 ## Flowchart
-**TODO : FLOWCHART GOES HERE**
+
+[Image](https://github.com/Eonvorax/holbertonschool-printf/blob/master/flowchart.png?raw=true)
 
 ## Authors
 
