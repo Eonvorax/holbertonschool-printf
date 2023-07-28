@@ -78,7 +78,7 @@ Output:
 
 ## Flowchart
 
-[Image](https://github.com/Eonvorax/holbertonschool-printf/blob/master/flowchart.png?raw=true)
+![Image](https://github.com/Eonvorax/holbertonschool-printf/blob/master/flowchart.png?raw=true)
 
 ## Authors
 
